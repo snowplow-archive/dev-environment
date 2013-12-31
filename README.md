@@ -11,4 +11,8 @@ Vagrant based general purpose development environment with Ansible playbooks to 
 
 Now you can run the different playbooks e.g.
 
-	ansible-playbook /vagrant/include/ansible-playbooks/playbook-name.yaml --inventory-file=/vagrant/home/ansible/ansible_hosts --connection=local"
+	ansible-playbook /vagrant/ansible-playbooks/playbook-name.yaml --inventory-file=/vagrant/home/ansible/ansible_hosts --connection=local
+
+For example, to run the 'basic-necessities' playbook:
+
+	ansible-playbook /vagrant/ansible-playbooks/basic-necessities.yaml --inventory-file=/vagrant/home/ansible/ansible_hosts --connection=local
