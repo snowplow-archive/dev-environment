@@ -15,8 +15,8 @@ Now you can run the different playbooks e.g.
 
 For example, to run the 'basic-necessities' playbook:
 
-	ansible-playbook /vagrant/ansible-playbooks/basic-necessities.yaml --inventory-file=/vagrant/home/ansible_hosts --connection=local
+	ansible-playbook /vagrant/ansible-playbooks/basic-necessities.yaml --inventory-file=/home/vagrant/ansible_hosts --connection=local
 
 To install the Ruby environment:
 
-	ansible-playbook /vagrant/ansible-playbooks/ruby.yaml --inventory-file=/vagrant/home/ansible_hosts --connection=local
+	ansible-playbook /vagrant/ansible-playbooks/ruby.yaml --inventory-file=/home/vagrant/ansible_hosts --connection=local
