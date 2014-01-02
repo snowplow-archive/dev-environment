@@ -34,4 +34,4 @@ To install the Ruby environment:
 
 	ansible-playbook /vagrant/ansible-playbooks/ruby.yaml --inventory-file=/home/vagrant/ansible_hosts --connection=local
 
-See the '/ansible-playbooks' folder for a complete list of playbooks to run.
+See the `/ansible-playbooks` folder for a complete list of playbooks to run.
