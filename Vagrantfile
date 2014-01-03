@@ -7,6 +7,9 @@ Vagrant.configure("2") do |config|
   # Make it possible to use the SSH keys from the host
   config.ssh.forward_agent = true
 
+  # Forward guest port 4000 to host port 4001 (for Jekyll)
+   config.vm.network "forwarded_port", guest: 4000, host: 4001
+
   # Change some default options for better experience, up memory and change VM name
   config.vm.provider :virtualbox do |vb|
     # Sets VM name equal to the parent directory + millis when started

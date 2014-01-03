@@ -4,7 +4,6 @@ ANSIBLE_DIR="/home/vagrant/ansible"
 ANSIBLE_HOSTS="/vagranthost"
 HOSTS_LOCATION_ON_VM="/home/vagrant/ansible_hosts"
 
-cd ${ANSIBLE_DIR}
 cp /vagrant${ANSIBLE_HOSTS} ${HOSTS_LOCATION_ON_VM} && chmod -x ${HOSTS_LOCATION_ON_VM}
 
 # Install the dependencies Ansible requires on guest VM
@@ -21,7 +20,7 @@ echo "Installing Ansible on guest VM"
 mkdir -p ${ANSIBLE_DIR}
 touch /home/vagrant/.bashrc
 echo "source $ANSIBLE_DIR/hacking/env-setup" >> /home/vagrant/.bashrc
-echo "export ANSIBLE_HOSTS=${TEMP_HOSTS}" >> /home/vagrant/.bashrc
+echo "export ANSIBLE_HOSTS=${HOSTS_LOCATION_ON_VM}" >> /home/vagrant/.bashrc
 
 echo "provision.sh completed running."
 echo "You will now be able to use Ansible to install the rest of the packages / frameworks you require"
