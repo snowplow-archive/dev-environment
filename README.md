@@ -44,7 +44,8 @@ See the `/ansible-playbooks` folder for a complete list of playbooks to run.
 | [ruby-playbook.yaml][ruby-playbook] | Installs RVM, Ruby version to 1.9.3 and sets default Ruby to 1.9.3 | None |
 | [snowplow-website.yaml][snowplow-website-playbook] | Installs the environment for updating the Snowplow website. (This is available on the [snowplow.github.com] [snowplow-website] repo.) | Depends on the Ruby playbook having been run on the dev box |
 | [jvm6.yaml][jvm-playbook] | Installs Java 6, SBT and Scala. Note that Java 6 rather than Java 7 is installed as this is the version used by Amazon on EMR. | None |
-| [postgres-8.4][postgres-playbook] | Installs Postgres 8.4. (Note that we use this version rather than version 9 to ensure compatibility with Amazon Redshift) | None |
+| [postgres-8.4.yaml][postgres-playbook] | Installs Postgres 8.4. (Note that we use this version rather than version 9 to ensure compatibility with Amazon Redshift) | None |
+| [play-framework.yaml][play-playbook] | Installs the Play 2 framework | This requires Java, so should be run *after* the [jvm6.yaml][jvm-playbook] |
 
 
 [basic-necessities-playbook]: /snowplow/dev-environment/blob/master/ansible-playbooks/basic-necessities.yaml
@@ -53,3 +54,4 @@ See the `/ansible-playbooks` folder for a complete list of playbooks to run.
 [snowplow-website]: /snowplow/snowplow.github.com
 [jvm-playbook]: /snowplow/dev-environment/blob/master/ansible-playbooks/jvm6.yaml
 [postgres-playbook]: /snowplow/dev-environment/blob/master/ansible-playbooks/postgres-8.4.yaml
+[play-playbook]: /snowplow/dev-environment/blob/master/ansible-playbooks/play-framework.yaml
