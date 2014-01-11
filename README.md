@@ -58,8 +58,7 @@ The `/ansible-playbooks/generic` folder contains the available playbooks:
 | Category   | Name                                | Description                                                                      | Dependencies |
 |:-----------|:------------------------------------|:---------------------------------------------------------------------------------|:-------------|
 | `base`     | [`base.yaml`] [base-pb]             | Installs basic utilities that are useful on the dev box e.g. Git, Vim etc.       | None         |
-| `jvm`      | [`jvm-6.yaml`] [jvm-6-pb]           |
-<ul><li>Oracle Java 1.6 (not v1.7, for Amazon EMR compatibility)</li>
+| `jvm`      | [`jvm-6.yaml`] [jvm-6-pb]           | <ul><li>Oracle Java 1.6 (not v1.7, for Amazon EMR compatibility)</li>
 <li>Scala 2.10.3</li>
 <li>SBT 0.13.0</li>
 <li>Thrift 0.9.1 (Java 6 not Java 7 for Amazon EMR compatibility)</li>
