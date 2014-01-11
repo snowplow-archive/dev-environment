@@ -37,7 +37,7 @@ And SSH into it:
 
 ### Installing software
 
-The guest VM has Ansible installed. This means you can run the different [Ansible playbooks] [`ansible-pb`] directly, thus:
+The guest VM has Ansible installed. This means you can run the different [Ansible playbooks] [ansible-pb] directly, thus:
 
 	ansible-playbook /vagrant/ansible-playbooks/{{PLAYBOOK_NAME}}.yaml --inventory-file=/vagrant/home/ansible/ansible_hosts --connection=local
 
