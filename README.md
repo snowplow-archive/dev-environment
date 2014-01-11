@@ -57,11 +57,11 @@ The `/ansible-playbooks/generic` folder contains the available playbooks:
 
 | Category   | Name                                | Description                                                                      | Dependencies |
 |:-----------|:------------------------------------|:---------------------------------------------------------------------------------|:-------------|
-| `base`     | [`base.yaml`] [base-pb]             | Installs basic utilities that are useful on the dev box e.g. Git, Vim etc.       | None         |
-| `jvm`      | [`jvm-6.yaml`] [jvm-6-pb]           | <ul><li>Oracle Java 1.6 (not v1.7, for Amazon EMR compatibility)</li><li>Scala 2.10.3</li><li>SBT 0.13.0</li><li>Thrift 0.9.1</li></ul> | None         |
-| `jvm`      | [`play-2.yaml`] [play-pb]           | Installs the Play 2 Framework                                                    | `jvm-6.yaml` |
-| `db`       | [`postgres-8.4.yaml`] [postgres-pb] | Installs Postgres 8.4. (8.4 not 9 for Amazon Redshift compatibility)             | None         |
-| `ruby`     | [`ruby-rvm.yaml`][ruby-playbook]    | Installs RVM, Ruby version to 1.9.3 and sets default Ruby to 1.9.3               | None         |
+| -          | [`base.yaml`] [base-pb]             | Installs basic utilities that are useful on the dev box e.g. Git, Vim etc.       | None         |
+| `jvm`      | [`jvm-6.yaml`] [jvm6-pb]            | <ul><li>Oracle Java 1.6 (not v1.7, for Amazon EMR compatibility)</li><li>Scala 2.10.3</li><li>SBT 0.13.0</li><li>Thrift 0.9.1</li></ul> | None         |
+| `jvm`      | [`play-2.yaml`] [play-2-pb]         | Installs the Play 2 Framework                                                    | `jvm-6.yaml` |
+| `db`       | [`postgres-8.4.yaml`] [postgres-8.4-pb] | Installs Postgres 8.4. (8.4 not 9 for Amazon Redshift compatibility)         | None         |
+| `ruby`     | [`ruby-rvm.yaml`][ruby-rvm-pb]      | Installs RVM, Ruby version to 1.9.3 and sets default Ruby to 1.9.3               | None         |
 
 TODO: formally add jvm-6.yaml dependency into Play framework.
 
@@ -69,9 +69,9 @@ TODO: formally add jvm-6.yaml dependency into Play framework.
 
 The `/ansible-playbooks/vendor` folder contains the available playbooks:
 
-| Vendor                  | Name                                 | Description                                                  | Dependencies |
-|:------------------------|:-------------------------------------|:-------------------------------------------------------------|:-------------|
-| `com.snowplowanalytics` | [snowplow.github.com.yaml] [base-pb] | Ruby, Jekyll & Pygments for the Snowplow website's front-end | `ruby`       |
+| Vendor                  | Name                                                  | Description                                                  | Dependencies |
+|:------------------------|:------------------------------------------------------|:-------------------------------------------------------------|:-------------|
+| `com.snowplowanalytics` | [`snowplow.github.com.yaml`] [snowplow.github.com-pb] | Ruby, Jekyll & Pygments for the Snowplow website's front-end | `ruby`       |
 
 ## Copyright and license
 
@@ -93,12 +93,12 @@ limitations under the License.
 
 [snowplow]: http://snowplowanalytics.com
 
-[basic-necessities-playbook]: /snowplow/dev-environment/blob/master/ansible-playbooks/basic-necessities.yaml
-[ruby-playbook]: /snowplow/dev-environment/blob/master/ansible-playbooks/ruby.yaml
-[snowplow-website-playbook]: /snowplow/dev-environment/blob/master/ansible-playbooks/snowplow-website.yaml
-[snowplow-website]: /snowplow/snowplow.github.com
-[jvm-playbook]: /snowplow/dev-environment/blob/master/ansible-playbooks/jvm6.yaml
-[postgres-playbook]: /snowplow/dev-environment/blob/master/ansible-playbooks/postgres-8.4.yaml
-[play-playbook]: /snowplow/dev-environment/blob/master/ansible-playbooks/play-framework.yaml
+[base-pb]: /snowplow/dev-environment/blob/master/ansible-playbooks/generic/base.yaml
+[jvm6-pb]: /snowplow/dev-environment/blob/master/ansible-playbooks/generic/jvm/jvm-6.yaml
+[play-2-pb]: /snowplow/dev-environment/blob/master/ansible-playbooks/generic/jvm/play-2.yaml
+[postgres-8.4-pb]: /snowplow/dev-environment/blob/master/ansible-playbooks/generic/db/postgres-8.4.yaml
+[ruby-rvm-pb]: /snowplow/dev-environment/blob/master/ansible-playbooks/generic/ruby/ruby-rvm.yaml
+
+[snowplow.github.com-pb]: 
 
 [license]: http://www.apache.org/licenses/LICENSE-2.0
