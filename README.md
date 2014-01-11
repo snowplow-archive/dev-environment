@@ -51,7 +51,7 @@ $ ansible-playbook /vagrant/ansible-playbooks/generic/base.yaml \
 --inventory-file=/home/vagrant/ansible_hosts --connection=local
 ```
 
-To install the Ruby and RVM environment:
+To install the JVM 6 environment:
 
 ```
 $ ansible-playbook /vagrant/ansible-playbooks/generic/ruby/ruby-rvm.yaml \
