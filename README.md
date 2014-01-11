@@ -37,7 +37,7 @@ And SSH into it:
 
 ### Installing software
 
-The guest VM has Ansible installed. This means you can run the different [Ansible playbooks] [ansible-playbooks] directly, thus:
+The guest VM has Ansible installed. This means you can run the different [Ansible playbooks] [`ansible-pb`] directly, thus:
 
 	ansible-playbook /vagrant/ansible-playbooks/{{PLAYBOOK_NAME}}.yaml --inventory-file=/vagrant/home/ansible/ansible_hosts --connection=local
 
@@ -53,7 +53,7 @@ To install the Ruby and RVM environment:
 
 ### Generics
 
-The `/ansible-playbooks/generic` folder contains the available playbooks:
+The [`/ansible-playbooks/generic`] [generic-pb] folder contains the available playbooks:
 
 | Category   | Name                                | Description                                                                      | Dependencies |
 |:-----------|:------------------------------------|:---------------------------------------------------------------------------------|:-------------|
@@ -65,7 +65,7 @@ The `/ansible-playbooks/generic` folder contains the available playbooks:
 
 ### Vendors
 
-The `/ansible-playbooks/vendor` folder contains the available playbooks:
+The [`/ansible-playbooks/vendor`] [vendor-pb] folder contains the available playbooks:
 
 | Vendor                  | Name                                                  | Description                                                  | Dependencies |
 |:------------------------|:------------------------------------------------------|:-------------------------------------------------------------|:-------------|
@@ -91,6 +91,10 @@ limitations under the License.
 [ansible]: http://www.ansibleworks.com/
 
 [snowplow]: http://snowplowanalytics.com
+
+[ansible-pb]: /snowplow/dev-environment/blob/master/ansible-playbooks
+[generic-pb]: /snowplow/dev-environment/blob/master/ansible-playbooks/generic
+[vendor-pb]: /snowplow/dev-environment/blob/master/ansible-playbooks/vendor
 
 [base-pb]: /snowplow/dev-environment/blob/master/ansible-playbooks/generic/base.yaml
 [jvm6-pb]: /snowplow/dev-environment/blob/master/ansible-playbooks/generic/jvm/jvm-6.yaml
