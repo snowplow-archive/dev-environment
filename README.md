@@ -59,10 +59,11 @@ The `/ansible-playbooks/generic` folder contains the available playbooks:
 |:-----------|:------------------------------------|:---------------------------------------------------------------------------------|:-------------|
 | `base`     | [`base.yaml`] [base-pb]             | Installs basic utilities that are useful on the dev box e.g. Git, Vim etc.       | None         |
 | `jvm`      | [`jvm-6.yaml`] [jvm-6-pb]           |
-* Oracle Java 1.6 (not v1.7, for Amazon EMR compatibility)
-* Scala 2.10.3
-* SBT 0.13.0
-* Thrift 0.9.1 (Java 6 not Java 7 for Amazon EMR compatibility) | None         |
+<ul><li>Oracle Java 1.6 (not v1.7, for Amazon EMR compatibility)</li>
+<li>Scala 2.10.3</li>
+<li>SBT 0.13.0</li>
+<li>Thrift 0.9.1 (Java 6 not Java 7 for Amazon EMR compatibility)</li>
+</ul> | None         |
 | `jvm`      | [`play-2.yaml`] [play-pb]           | Installs the Play 2 Framework                                                    | `jvm-6.yaml` |
 | `db`       | [`postgres-8.4.yaml`] [postgres-pb] | Installs Postgres 8.4. (8.4 not 9 for Amazon Redshift compatibility)             | None         |
 | `ruby`     | [`ruby-rvm.yaml`][ruby-playbook]    | Installs RVM, Ruby version to 1.9.3 and sets default Ruby to 1.9.3               | None         |
