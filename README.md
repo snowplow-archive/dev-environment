@@ -6,6 +6,8 @@
 * Ruby
 * Postgres
 
+Works fine on Linux, Mac and Windows hosts.
+
 Used as the development environment for all [Snowplow Analytics] [snowplow] projects.
 
 ## Installation
@@ -13,8 +15,6 @@ Used as the development environment for all [Snowplow Analytics] [snowplow] proj
 ### Dependencies
 
 To use this development environment, you need to have [Vagrant] [vagrant-install] and [VirtualBox] [virtualbox-install] installed.
-
-The environment should work fine on Linux / Mac / Windows hosts.
 
 We also recommend installing vagrant-vbguest to prevent the VirtualBox Guest Additions from getting out of sync:
 
@@ -58,7 +58,10 @@ The `/ansible-playbooks/generic` folder contains the available playbooks:
 | Category   | Name                                | Description                                                                      | Dependencies |
 |:-----------|:------------------------------------|:---------------------------------------------------------------------------------|:-------------|
 | `base`     | [`base.yaml`] [base-pb]             | Installs basic utilities that are useful on the dev box e.g. Git, Vim etc.       | None         |
-| `jvm`      | [`jvm-6.yaml`] [jvm-6-pb]           | Installs Java 6, SBT and Scala. (Java 6 not Java 7 for Amazon EMR compatibility) | None         |
+| `jvm`      | [`jvm-6.yaml`] [jvm-6-pb]           | * Oracle Java 1.6 (not v1.7, for Amazon EMR compatibility)
+* Scala 2.10.3
+* SBT 0.13.0
+* Thrift 0.9.1 (Java 6 not Java 7 for Amazon EMR compatibility) | None         |
 | `jvm`      | [`play-2.yaml`] [play-pb]           | Installs the Play 2 Framework                                                    | `jvm-6.yaml` |
 | `db`       | [`postgres-8.4.yaml`] [postgres-pb] | Installs Postgres 8.4. (8.4 not 9 for Amazon Redshift compatibility)             | None         |
 | `ruby`     | [`ruby-rvm.yaml`][ruby-playbook]    | Installs RVM, Ruby version to 1.9.3 and sets default Ruby to 1.9.3               | None         |
