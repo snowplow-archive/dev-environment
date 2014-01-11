@@ -20,7 +20,7 @@ We also recommend installing vagrant-vbguest to prevent the VirtualBox Guest Add
 
 	$ vagrant plugin install vagrant-vbguest
 
-### Running from Vagrant
+### Starting Vagrant
 
 First, clone the repo:
 
@@ -63,8 +63,6 @@ The `/ansible-playbooks/generic` folder contains the available playbooks:
 | `db`       | [`postgres-8.4.yaml`] [postgres-8.4-pb] | Installs Postgres 8.4. (8.4 not 9 for Amazon Redshift compatibility)         | None         |
 | `ruby`     | [`ruby-rvm.yaml`][ruby-rvm-pb]      | Installs RVM, Ruby version to 1.9.3 and sets default Ruby to 1.9.3               | None         |
 
-TODO: formally add jvm-6.yaml dependency into Play framework.
-
 ### Vendors
 
 The `/ansible-playbooks/vendor` folder contains the available playbooks:
@@ -99,6 +97,6 @@ limitations under the License.
 [postgres-8.4-pb]: /snowplow/dev-environment/blob/master/ansible-playbooks/generic/db/postgres-8.4.yaml
 [ruby-rvm-pb]: /snowplow/dev-environment/blob/master/ansible-playbooks/generic/ruby/ruby-rvm.yaml
 
-[snowplow.github.com-pb]: 
+[snowplow.github.com-pb]: /snowplow/dev-environment/blob/master/ansible-playbooks/vendor/com.snowplowanalytics/snowplow.github.com.yaml
 
 [license]: http://www.apache.org/licenses/LICENSE-2.0
