@@ -43,11 +43,11 @@ The guest VM has Ansible installed. This means you can run the different [Ansibl
 
 For example, to run the 'base' playbook:
 
-	ansible-playbook /vagrant/ansible-playbooks/base.yaml --inventory-file=/home/vagrant/ansible_hosts --connection=local
+	ansible-playbook /vagrant/ansible-playbooks/generic/base.yaml --inventory-file=/home/vagrant/ansible_hosts --connection=local
 
 To install the Ruby and RVM environment:
 
-	ansible-playbook /vagrant/ansible-playbooks/ruby-rvm.yaml --inventory-file=/home/vagrant/ansible_hosts --connection=local
+	ansible-playbook /vagrant/ansible-playbooks/generic/ruby/ruby-rvm.yaml --inventory-file=/home/vagrant/ansible_hosts --connection=local
 
 ## Available playbooks
 
