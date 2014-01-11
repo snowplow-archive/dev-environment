@@ -58,6 +58,16 @@ $ ansible-playbook /vagrant/ansible-playbooks/generic/jvm/jvm-6.yaml \
 --inventory-file=/home/vagrant/ansible_hosts --connection=local
 ```
 
+### Starting developing
+
+We recommend removing git tracking from the dev environment before starting coding. You can do these either from the host or the guest VM:
+
+    $ rm -rf .git*
+
+Now you can safely pull down the codebase you want to work on e.g:
+
+    $ git clone git@github.com:snowplow/snowplow.git
+
 ## Available playbooks
 
 ### Generics
