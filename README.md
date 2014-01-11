@@ -51,16 +51,27 @@ To install the Ruby and RVM environment:
 
 ## Available playbooks
 
-The `/ansible-playbooks` folder contains the available playbooks:
+### Generics
 
-| Playbook name | Description | Dependencies |
-|:--------------------|:------------------|:-------------------|
-| [base.yaml][base-playbook] | Installs basic utilities that are useful on the dev box e.g. Git, Vim etc. | None |
-| [ruby-playbook.yaml][ruby-playbook] | Installs RVM, Ruby version to 1.9.3 and sets default Ruby to 1.9.3 | None |
-| [snowplow-website.yaml][snowplow-website-playbook] | Installs the environment for updating the Snowplow website. (This is available on the [snowplow.github.com] [snowplow-website] repo.) | Depends on the Ruby playbook having been run on the dev box |
-| [jvm6.yaml][jvm-playbook] | Installs Java 6, SBT and Scala. Note that Java 6 rather than Java 7 is installed as this is the version used by Amazon on EMR. | None |
-| [postgres-8.4.yaml][postgres-playbook] | Installs Postgres 8.4. (Note that we use this version rather than version 9 to ensure compatibility with Amazon Redshift) | None |
-| [play-framework.yaml][play-playbook] | Installs the Play 2 framework | This requires Java, so should be run *after* the [jvm6.yaml][jvm-playbook] |
+The `/ansible-playbooks/generic` folder contains the available playbooks:
+
+| Category   | Name                                | Description                                                                      | Dependencies |
+|:-----------|:------------------------------------|:---------------------------------------------------------------------------------|:-------------|
+| `base`     | [`base.yaml`] [base-pb]             | Installs basic utilities that are useful on the dev box e.g. Git, Vim etc.       | None         |
+| `jvm`      | [`jvm-6.yaml`] [jvm-6-pb]           | Installs Java 6, SBT and Scala. (Java 6 not Java 7 for Amazon EMR compatibility) | None         |
+| `jvm`      | [`play-2.yaml`] [play-pb]           | Installs the Play 2 Framework                                                    | `jvm-6.yaml` |
+| `db`       | [`postgres-8.4.yaml`] [postgres-pb] | Installs Postgres 8.4. (8.4 not 9 for Amazon Redshift compatibility)             | None         |
+| `ruby`     | [`ruby-rvm.yaml`][ruby-playbook]    | Installs RVM, Ruby version to 1.9.3 and sets default Ruby to 1.9.3               | None         |
+
+TODO: formally add jvm-6.yaml dependency into Play framework.
+
+### Vendors
+
+The `/ansible-playbooks/vendor` folder contains the available playbooks:
+
+| Vendor                  | Name                                 | Description                                                  | Dependencies |
+|:------------------------|:-------------------------------------|:-------------------------------------------------------------|:-------------|
+| `com.snowplowanalytics` | [snowplow.github.com.yaml] [base-pb] | Ruby, Jekyll & Pygments for the Snowplow website's front-end | `ruby`       |
 
 ## Copyright and license
 
