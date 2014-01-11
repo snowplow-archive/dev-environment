@@ -55,7 +55,7 @@ The `/ansible-playbooks` folder contains the available playbooks:
 
 | Playbook name | Description | Dependencies |
 |:--------------------|:------------------|:-------------------|
-| [basic-necessities.yaml][basic-necessities-playbook] | Installs basic utilities that are useful on the dev box e.g. Git, Vim etc. | None |
+| [base.yaml][base-playbook] | Installs basic utilities that are useful on the dev box e.g. Git, Vim etc. | None |
 | [ruby-playbook.yaml][ruby-playbook] | Installs RVM, Ruby version to 1.9.3 and sets default Ruby to 1.9.3 | None |
 | [snowplow-website.yaml][snowplow-website-playbook] | Installs the environment for updating the Snowplow website. (This is available on the [snowplow.github.com] [snowplow-website] repo.) | Depends on the Ruby playbook having been run on the dev box |
 | [jvm6.yaml][jvm-playbook] | Installs Java 6, SBT and Scala. Note that Java 6 rather than Java 7 is installed as this is the version used by Amazon on EMR. | None |
