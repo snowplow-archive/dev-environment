@@ -1,34 +1,47 @@
 # dev-environment
 
-Vagrant based general purpose development environment with Ansible playbooks to install common frameworks (e.g. JVM / SBT / Ruby RVM / Python VirtualEnv etc.
+[Vagrant] [vagrant]-based Snowplow development environment with [Ansible] [ansible] playbooks to install common tools, including:
 
+* The JVM ecosystem
+* Ruby
+* Postgres
 
 ## Installation
 
-First, clone the repo
+### Dependencies
+
+To use this development environment, you need to have [Vagrant] [vagrant] and [VirtualBox] [virtualbox] installed.
+
+The environment should work fine on Linux / Mac / Windows hosts.
+
+We also recommend installing vagrant-vbguest to prevent the VirtualBox Guest Additions from getting out of sync:
+
+	$ vagrant plugin install vagrant-vbguest
+
+### Running from Vagrant
+
+First, clone the repo:
 
 	$ git clone git@github.com:snowplow/dev-environment.git
 	$ cd dev-environment
 
-We recommend installing [vagrant-vbguest](git@github.com:snowplow/dev-environment.git) (to ensure that the VM guest addition match those installed on Virtual Box on the host):
-
-	$ vagrant plugin install vagrant-vbguest
-
-Now you can build the VM
+Now you can build the VM:
 
 	$ vagrant up
 
-And SSH into it...
+And SSH into it:
 
-	$ vagrant SSH
+	$ vagrant ssh
 
-The guest VM has ansible installed. This means you can run the different playbooks directly e.g.
+### Installing software
 
-	ansible-playbook /vagrant/ansible-playbooks/playbook-name.yaml --inventory-file=/vagrant/home/ansible/ansible_hosts --connection=local
+The guest VM has Ansible installed. This means you can run the different [Ansible playbooks] [ansible-playbooks] directly, thus:
 
-For example, to run the 'basic-necessities' playbook:
+	ansible-playbook /vagrant/ansible-playbooks/{{PLAYBOOK_NAME}}.yaml --inventory-file=/vagrant/home/ansible/ansible_hosts --connection=local
 
-	ansible-playbook /vagrant/ansible-playbooks/basic-necessities.yaml --inventory-file=/home/vagrant/ansible_hosts --connection=local
+For example, to run the 'bare-necessities' playbook:
+
+	ansible-playbook /vagrant/ansible-playbooks/bare-necessities.yaml --inventory-file=/home/vagrant/ansible_hosts --connection=local
 
 To install the Ruby environment:
 
@@ -38,7 +51,7 @@ See the `/ansible-playbooks` folder for a complete list of playbooks to run.
 
 ## An overview of the different playbooks
 
-| ** Playbook name ** | ** Description ** | ** Dependencies ** |
+| Playbook name | Description | Dependencies |
 |:--------------------|:------------------|:-------------------|
 | [basic-necessities.yaml][basic-necessities-playbook] | Installs basic utilities that are useful on the dev box e.g. Git, Vim etc. | None |
 | [ruby-playbook.yaml][ruby-playbook] | Installs RVM, Ruby version to 1.9.3 and sets default Ruby to 1.9.3 | None |
