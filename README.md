@@ -1,4 +1,4 @@
-# dev-environment
+# Snowplow Development Environment
 
 [Vagrant] [vagrant]-based development environment with [Ansible] [ansible] playbooks to install common tools, including:
 
@@ -73,7 +73,7 @@ The `/ansible-playbooks/vendor` folder contains the available playbooks:
 
 ## Copyright and license
 
-Snowplow Dev Environment is copyright 2014 Snowplow Analytics Ltd.
+Snowplow Development Environment is copyright 2014 Snowplow Analytics Ltd.
 
 Licensed under the **[Apache License, Version 2.0] [license]** (the "License");
 you may not use this software except in compliance with the License.
