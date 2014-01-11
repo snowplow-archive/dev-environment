@@ -88,6 +88,7 @@ limitations under the License.
 [vagrant-install]: http://docs.vagrantup.com/v2/installation/index.html
 [virtualbox]: https://www.virtualbox.org
 [virtualbox-install]: https://www.virtualbox.org/wiki/Downloads
+[ansible]: http://www.ansibleworks.com/
 
 [snowplow]: http://snowplowanalytics.com
 
