@@ -84,7 +84,7 @@ The [`/ansible-playbooks/vendor`] [vendor-pb] folder contains the available play
 
 Snowplow Development Environment is copyright 2014 Snowplow Analytics Ltd.
 
-Licensed under the **[Apache License, Version 2.0] [license]** (the "License");
+Licensed under the [Apache License, Version 2.0] [license] (the "License");
 you may not use this software except in compliance with the License.
 
 Unless required by applicable law or agreed to in writing, software
