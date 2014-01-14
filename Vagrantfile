@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider :virtualbox do |vb|
     # Sets VM name equal to the parent directory + millis when started
     vb.name = Dir.pwd().split("/")[-1] + "-" + Time.now.to_f.to_i.to_s
-    vb.customize ["modifyvm", :id, "--memory", "2058"]
+    vb.memory = 2058
   end
 
   # Run the provision.sh file, which install Ansible on the guest VM
