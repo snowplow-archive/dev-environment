@@ -19,6 +19,6 @@ Vagrant.configure("2") do |config|
 
   # Run the provision.sh file, which install Ansible on the guest VM
   config.vm.provision :shell do |sh|
-    sh.path = "provision.sh"
+    sh.path = "scripts/provision.sh"
   end
 end
