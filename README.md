@@ -27,6 +27,10 @@ First, clone the repo, including `ansible-playbooks` submodule:
 	$ git clone --recursive git@github.com:snowplow/dev-environment.git
 	$ cd dev-environment
 
+By default the development environment is configured with 2 GB of RAM. You can adjust this by running the script, e.g. for 5 GB try:
+
+	$ ./scripts/configure.sh 5
+
 Now you can build the VM:
 
 	$ vagrant up
