@@ -22,9 +22,9 @@ We also recommend installing vagrant-vbguest to prevent the VirtualBox Guest Add
 
 ### Starting Vagrant
 
-First, clone the repo:
+First, clone the repo, including `ansible-playbooks` submodule:
 
-	$ git clone git@github.com:snowplow/dev-environment.git
+	$ git clone --recursive git@github.com:snowplow/dev-environment.git
 	$ cd dev-environment
 
 Now you can build the VM:
@@ -70,25 +70,7 @@ Now you can safely pull down the codebase you want to work on e.g:
 
 ## Available playbooks
 
-### Generics
-
-The [`/ansible-playbooks/generic`] [generic-pb] folder contains the available playbooks:
-
-| Category   | Name                                | Description                                                                      | Dependencies |
-|:-----------|:------------------------------------|:---------------------------------------------------------------------------------|:-------------|
-| -          | [`base.yaml`] [base-pb]             | Installs basic utilities that are useful on the dev box e.g. Git, Vim etc.       | None         |
-| `jvm`      | [`jvm-6.yaml`] [jvm6-pb]            | <ul><li>Oracle Java 1.6 (1.6 not v1.7, for Amazon EMR compat)</li><li>Scala 2.10.3</li><li>SBT 0.13.0</li><li>Thrift 0.9.1</li></ul> | None         |
-| `jvm`      | [`play-2.yaml`] [play-2-pb]         | Installs the Play 2 Framework                                                    | `jvm-6.yaml` |
-| `db`       | [`postgres-8.4.yaml`] [postgres-8.4-pb] | Installs Postgres 8.4. (8.4 not 9, for Amazon Redshift compat)         | None         |
-| `ruby`     | [`ruby-rvm.yaml`][ruby-rvm-pb]      | Installs RVM, Ruby version to 1.9.3 and sets default Ruby to 1.9.3               | None         |
-
-### Vendors
-
-The [`/ansible-playbooks/vendor`] [vendor-pb] folder contains the available playbooks:
-
-| Vendor                  | Name                                                  | Description                                                  | Dependencies |
-|:------------------------|:------------------------------------------------------|:-------------------------------------------------------------|:-------------|
-| `com.snowplowanalytics` | [`snowplow.github.com.yaml`] [snowplow.github.com-pb] | Ruby, Jekyll & Pygments for the Snowplow website's front-end | `ruby`       |
+Please see our [Ansible Playbooks] [ansible-playbooks] repository for the full list.
 
 ## Copyright and license
 
@@ -111,16 +93,6 @@ limitations under the License.
 
 [snowplow]: http://snowplowanalytics.com
 
-[ansible-pb]: /snowplow/dev-environment/blob/master/ansible-playbooks
-[generic-pb]: /snowplow/dev-environment/blob/master/ansible-playbooks/generic
-[vendor-pb]: /snowplow/dev-environment/blob/master/ansible-playbooks/vendor
-
-[base-pb]: /snowplow/dev-environment/blob/master/ansible-playbooks/generic/base.yaml
-[jvm6-pb]: /snowplow/dev-environment/blob/master/ansible-playbooks/generic/jvm/jvm-6.yaml
-[play-2-pb]: /snowplow/dev-environment/blob/master/ansible-playbooks/generic/jvm/play-2.yaml
-[postgres-8.4-pb]: /snowplow/dev-environment/blob/master/ansible-playbooks/generic/db/postgres-8.4.yaml
-[ruby-rvm-pb]: /snowplow/dev-environment/blob/master/ansible-playbooks/generic/ruby/ruby-rvm.yaml
-
-[snowplow.github.com-pb]: /snowplow/dev-environment/blob/master/ansible-playbooks/vendor/com.snowplowanalytics/snowplow.github.com.yaml
+[ansible-playbooks]: https://github.com/snowplow/ansible-playbooks
 
 [license]: http://www.apache.org/licenses/LICENSE-2.0
