@@ -70,7 +70,7 @@ We recommend removing git tracking from the dev environment before starting codi
 
 Now you can safely pull down the codebase you want to work on e.g:
 
-    $ git clone git@github.com:snowplow/snowplow.git
+    $ git clone https://github.com/snowplow/snowplow.git
 
 ## Available playbooks
 
