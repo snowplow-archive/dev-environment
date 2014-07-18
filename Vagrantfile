@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
    config.vm.network "forwarded_port", guest: 5432, host: 5433
 
   # Forward guest port 7474 to host port 7475 (for Neo4J)
-   config.vm.network "forwarded_port", guest: 5432, host: 7475
+   config.vm.network "forwarded_port", guest: 7474, host: 7475
 
   # Change some default options for better experience, up memory and change VM name
   config.vm.provider :virtualbox do |vb|
