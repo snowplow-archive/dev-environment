@@ -16,6 +16,9 @@ Vagrant.configure("2") do |config|
   # Forward guest port 5432 to host port 5433 (for PostgreSQL)
    config.vm.network "forwarded_port", guest: 5432, host: 5433
 
+  # Forward guest port 7474 to host port 5433 (for Neo4J)
+   config.vm.network "forwarded_port", guest: 5432, host: 7475
+
   # Change some default options for better experience, up memory and change VM name
   config.vm.provider :virtualbox do |vb|
     # Sets VM name equal to the parent directory + millis when started
