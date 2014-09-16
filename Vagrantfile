@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
   # Forward guest port 8080 to host port 8080 (for Kibana)
    config.vm.network "forwarded_port", guest: 8080, host: 8080
 
-  # Forward guest port 8080 to host port 8088 (for YARN)
+  # Forward guest port 8088 to host port 8088 (for YARN)
    config.vm.network "forwarded_port", guest: 8088, host: 8088
 
   # Change some default options for better experience, up memory and change VM name
