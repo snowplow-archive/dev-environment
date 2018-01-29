@@ -44,22 +44,23 @@ And SSH into it:
 The guest VM has Ansible installed. This means you can run the different [Ansible playbooks] [ansible-playbooks] directly, thus:
 
 ```
-$ ansible-playbook /vagrant/ansible-playbooks/{{PLAYBOOK_NAME}}.yml \
---inventory-file=/vagrant/home/ansible/ansible_hosts --connection=local
+$ ansible-playbook /vagrant/vagrant/oss-playbooks/{{PLAYBOOK_NAME}}.yml \
+--inventory-file=/vagrant/vagrant/ansible.hosts --connection=local
 ```
 
 For example, to install the development environment for working on the Snowplow batch-based enrichment process:
 
 ```
-$ ansible-playbook /vagrant/ansible-playbooks/snowplow-batch-pipeline.yml \
---inventory-file=/home/vagrant/ansible_hosts --connection=local
+$ ansible-playbook /vagrant/vagrant/oss-playbooks/snowplow-batch-pipeline.yml \
+--inventory-file=/vagrant/vagrant/ansible.hosts --connection=local
+
 ```
 
 To simply install Java-7:
 
 ```
-$ ansible-playbook /vagrant/ansible-playbooks/java-7.yml \
---inventory-file=/home/vagrant/ansible_hosts --connection=local
+$ ansible-playbook /vagrant/vagrant/oss-playbooks/java-7.yml \
+--inventory-file=/vagrant/vagrant/ansible.hosts --connection=local
 ```
 
 A whole host of playbooks can be found in the [ansible-playbooks] (https://github.com/snowplow/ansible-playbooks). Playbooks in the root of the project can be run directly - these are composed of [roles] (https://github.com/snowplow/ansible-playbooks/tree/master/roles) that individually install specific components of development environments. For more information on composing your own development environments out of the individual roles, see the [ansible-playbooks README] (https://github.com/snowplow/ansible-playbooks).
